@@ -1,0 +1,28 @@
+{
+  "name": "rally",
+  "version": "0.0.1",
+  "authors": [
+    "chihsuan <chihsuan.huang.7@gmail.com>"
+  ],
+  "description": "A simple but beautiful JSON visualization library",
+  "keywords": [
+    "json",
+    "data",
+    "charts",
+    "table",
+    "map"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "elixirmap": "0.1.0",
+    "elixirchart": "0.0.5",
+    "amass": "0.4.1"
+  }
+}

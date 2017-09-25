@@ -1,0 +1,64 @@
+body{
+    background-image: url(../img/back.jpg);
+    background-repeat: no-repeat;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:	rgba(0,0,0,0.8);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 0px 11px 52px;
+    text-decoration: none;
+    font-size: 15px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+    font-family: dosis-book;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: orange;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+  left: -33px;
+    font-size: 36px;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.dropdown-menu li a{
+    font-family: dosis-book;
+    background-color:  rgba(0,0,0,0.8);
+    color: white;
+}
+.dropdown-menu{
+       background-color:  rgba(0,0,0,0.6);
+      margin-left: 23px;
+      margin-left: 19%;
+      
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color:rgba(0,0,0,0.6);
+    color:orange;
+}
+@font-face {
+font-family: "Dosis-book";
+src: url("harabra/Dosis-Book.ttf");
+
+}

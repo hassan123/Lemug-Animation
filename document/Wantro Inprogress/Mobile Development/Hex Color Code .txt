@@ -1,0 +1,47 @@
+Business App
+#FB7B56
+
+
+Construction App
+#45CBF6
+
+
+Mobile Commerce
+#EC6541
+
+
+Mobile Emoticons
+#FFCCC2
+
+
+Fitness App
+#FABE16
+
+
+Food App
+#6ACBDF
+
+
+Location App
+#ECAB20
+
+
+Shopping App
+#DE5066
+
+
+Sports App
+#72DBAC
+
+
+Taxi App
+#FFCE00
+
+
+Video players
+#E37F64
+
+
+Weather App
+#D8EEF3
+

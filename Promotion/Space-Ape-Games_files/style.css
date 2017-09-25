@@ -1,0 +1,1095 @@
+/*
+Theme Name: Space Ape Games
+Description: Space Ape Games custom theme
+Version: 1
+Author: Tremulant Design
+Author URI: http://tremulantdesign.com/
+*/
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* 
+
+0. Fonts
+
+1. General
+    1.1 Buttons
+2. Header
+3. Homepage
+    3.1. Rocket section
+    3.2. Games section
+    3.3. Satellite section
+
+ */
+
+ /* TODO :
+
+    - Retina clouds
+    - Retina shuttle+jet streams
+
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+/* General */
+body {background-color: #0d1931; background-image:url(../images/bg-stars%20.png);background-attachment : fixed; font-family: 'Roboto', sans-serif; margin:0;}
+body.projects, body.blog, body.about, body.board-of-directors, body.meet-the-team, body.investors-advisors, body.press {background:#281304;}
+main {overflow: hidden; min-height:300px;}
+.in {width:960px; margin:0 auto;}
+.in.alt {width:911px; margin:0 auto;}
+ul {list-style-type: none; padding:0; margin:0;}
+a {text-decoration: none; color:inherit;}
+section {z-index:2; position:relative; margin:0;}
+*:focus {outline: none;}
+p > a:focus, p span > a:focus, a:focus {background-color: #12a5f4!important;}
+a:focus {outline:none; color:#281304!important;}
+.lb-nav a:focus {background-color: transparent!important;}
+a:hover {text-decoration: underline;}
+a > img {-webkit-transition: all .3s; transition: all .3s; transform:scale(1); -webkit-transform:scale(1);}
+a:focus > img {transform:scale(0.95); -webkit-transform:scale(0.95);}
+body > .skip {position: absolute;top: -1000px;left: -1000px;height: 1px;width: 1px;text-align: left;overflow: hidden;}
+body > a.skip:active, a.skip:focus, a.skip:hover {left: 9px; top: 82px; width: auto; height: auto; overflow: visible; z-index: 3; background-color: #12a5f4; padding: 10px; color: #fff; text-decoration: underline; outline: none;}
+
+/* Canvas */
+#stars_canvas {position:absolute; top:0; bottom:0; right:0; left:0;}
+
+/* Buttons */
+button.big {overflow:hidden; text-align:left; padding:0; border-radius:10px; background: #12a5f4; border:none; color:#fff; font-family: 'Roboto', sans-serif; font-weight: bold; font-size:27px;display: none !important;}
+button.big a {display: inline-block;}
+button.big a > span {padding:25px; display: inline-block;}
+button.big.arrow a:after {width:103px; height:85px; content:""; background-repeat:no-repeat; background-color:#ffaf6c; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/arrow-simple-icon.svg"); background-position:center; background-size: 31px 47px; float:right;}
+
+/* Lists */
+ul.gallery {width:100%; margin:59px 0 70px;}
+ul.gallery li {float:left; width: 234px; height:234px; background:#d5d5d5; margin-right:8px; margin-bottom:8px;}
+ul.gallery li:nth-child(4n) {margin-right:0;}
+ul.gallery li img {width: 234px; height:234px;}
+
+ul.board {}
+ul.board li {margin:12px 0;}
+ul.board.press li {margin:24px 0;}
+ul.board.press {margin-bottom:30px!important;}
+ul.board li > div {float:right; width:835px;}
+ul.board li > img {margin-top: 12px; float:left; width:105px; height:105px; border-radius:50%; margin-right:20px;}
+ul.board li h4, ul.board li h5 {font-size: 20px; color:#12a5f4; margin:0;}
+ul.board li h5 {color:#6c6c6c;}
+ul.board li p {margin:3px 0 13px!important;}
+ul.board.investors li {margin:16px 0;}
+ul.board.investors li > img {height:auto; border-radius:0; margin-top: 12px; float:left; width:105px; margin-right:20px;}
+ul.board.press li > img {height:auto; border-radius:0; margin-top: 0px; float:left; width:auto; max-width:227px; margin-right:20px;}
+ul.board.press li > div {width: 696px;}
+
+ul.team {margin-bottom:80px;}
+ul.team > a {float:left;}
+ul.team li {border-radius: 50%; /*overflow: hidden;*/ position:relative; width:147px; height:147px; float:left;    margin-right: 13px; margin-top: 13px; text-align: center;}
+ul.team li:nth-child(6n) {margin-right:0;}
+ul.team li img {height:147px; width:147px; position:relative; z-index:1; border-radius:50%;}
+ul.team li div.overlay {border-radius:50%; -webkit-transition: opacity .4s; transition: opacity .4s; opacity:0; padding:28px 22px; text-align: center; z-index:3; display: inline-block; position: relative; margin-top: -165px; vertical-align: middle; padding: 0 8px; width: 131px;}
+ul.team li div.overlay h2 {line-height:1; margin:0!important; font-size:18px!important; color:#12a5f4;}
+ul.team li div.overlay p {word-wrap: break-word; padding-top: 6px!important; margin:0!important; color:#fff!important; font-size:14px!important; font-family: 'Roboto', sans-serif;!important; line-height:normal;}
+ul.team li:after {border-radius:50%; -webkit-transition: opacity .3s; transition: opacity .3s; z-index:2; opacity:0; background:rgba(0,0,0,.8); content:""; position:absolute; top:2px; left: 0; width:147px; height:147px;}
+ul.team li:hover div.overlay, ul.team a:focus li div.overlay {opacity: 1;}
+ul.team li:hover:after, ul.team a:focus li:after {opacity:1;}
+ul.team a:focus li img {transform: scale(1); -webkit-transform: scale(1);}
+
+#whr_embed_hook .whr-items { margin-bottom:55px;}
+#whr_embed_hook .whr-items h3 {margin:0; color:#12a5f4; font-weight: bold; font-size:25px;}
+#whr_embed_hook .whr-info {display:none;}
+#whr_embed_hook .whr-items li {margin:13px 0;}
+
+ul.emails {padding-left:38px; margin-top:23px;}
+ul.emails li {margin-bottom:28px;}
+ul.emails li:before {content:""; float:left; background-image: url("img/contact-mail.svg"); background-repeat: no-repeat; background-size: 32px; width:32px; height:46px; background-position: center; margin-right:23px;}
+ul.emails li h6 {line-height:1; margin:0; font-size:20px; font-weight: normal; color:#484848;}
+ul.emails li a {font-size:24px; color:#12a5f4; line-height: 1.3;}
+
+/* Colgroups */
+.colgroup .col {float:left; width:464px;}
+.colgroup .col a {display: inline-block;}
+.colgroup .col img {width:464px;}
+.colgroup .col:nth-child(2n) {float:right;}
+
+
+/* Header */
+body > header {background:#12a5f4; color:#fff; position:fixed; z-index:10; width:100%; padding:14px 0; top:0;}
+body > header a:focus, body > header a:focus img {background-color: transparent!important;}
+body > header .in > nav {float:right; font-size: 18px; font-weight:bold; text-transform: lowercase;}
+body > header .in #logo {-webkit-transition: all .3s; transition: all .3s; transform:scale(1); -webkit-transform:scale(1); width:218px;}
+body > header .in .logo:focus img#logo {transform:scale(1.05); -webkit-transform:scale(1.05);}
+body > header .in > nav > ul {float:left; margin:0; padding-top:13px; margin-left:20px;}
+body > header .in > nav > ul > li > ul.sub-menu {left: -35px; display:none; position:absolute; width:250px; padding:35px 35px 15px 35px; background: rgba(244,119,15,.7); top:45px;}
+body > header .in > nav > ul > li > ul.sub-menu:before {position: absolute; content: ""; width: 70px; height: 60px; top: -32px;}
+body > header .in > nav > ul > li > ul.sub-menu li {/*text-transform : capitalize; margin-left:16px;*/  margin-right:17px; /*margin-top:10px;*/ margin-bottom: 20px;}
+body > header .in > nav > ul > li > ul.sub-menu li.current_page_item > a {color:#281304; position:relative;}
+body > header .in > nav ul.sub-menu li.current_page_item a:after {content:""; background: #281304; height:5px; width:100%; position:absolute; bottom:-8px; left:0;}
+body > header .in > nav > ul > li:hover > ul.sub-menu {display:block; }
+body > header .in > nav > ul.social {padding-top:8px;}
+body > header .in > nav > ul.social li {margin-left:46px;}
+body > header .in > nav > ul.social li {border-radius:50%; margin-left:8px; width:32px; height:32px; overflow: hidden;}
+body > header .in > nav > ul.social li a {background-size:  32px 32px;  border-radius:50%;height:32px; overflow: hidden; padding-left:32px; display:block; }
+body > header .in > nav > ul.social li a:focus {background-color: #281304;}
+body > header .in > nav > ul.social li a:hover {background-color: #281304;}
+body > header .in > nav > ul.social li a.twitter {background-image: url("img/twitter.png");}
+body > header .in > nav > ul.social li a.facebook {background-image: url("img/facebook.png");}
+body > header .in > nav > ul > li {float:left; margin-left:35px; position:relative;}
+body > header .in > nav > ul > li.current_page_item > a, body > header .in > nav > ul > li.current-page-ancestor > a {color:#281304; position:relative;}
+body > header .in > nav > ul > li.current_page_item > a:after, body > header .in > nav > ul > li.current-page-ancestor > a:after {content:""; background: #281304; height:5px; width:100%; position:absolute; bottom:-8px; left:0;}
+body > header .in > nav > ul > li a {color:#fcf8f5; -webkit-transition: color .3s; transition: color .3s;}
+body > header .in > nav > ul > li a:hover {color:#281304; text-decoration: none;}
+body > header .in > img {float:left;}
+
+/* Rocket section */
+#rocket * {-webkit-transform:translateZ(0); transform:translateZ(0);}
+#rocket {position:relative; height:3000px;}
+#rocket > p {z-index: 3; font-weight:bold; color:#fff; font-size:30px; text-align:center; margin-top:160px; position:fixed; left:50%; margin-left:-480px; display:block;}
+#rocket .l {background-repeat:repeat-x; bottom:0;  position:fixed; width:100%; height:1000px; background-position:center bottom; z-index:1; background-size:100%;}
+#rocket .l.off {display:none;}
+#rocket > p.off {display:none;}
+#rocket .l#layer1 {bottom:-75px; z-index:4; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/clouds-foreground.svg"); background-position:center bottom; background-size:102%;}
+#rocket .l#layer1:after {content: ""; width: 100%; height: 500px; position: absolute; bottom: -500px; background-color: #fcf8f5;}
+#rocket .l#layer2 {z-index:3; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/clouds-mid.svg"); }
+#rocket .l#layer3 {z-index: 1; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/clouds-bg.svg")}
+/*#rocket .l#layer3:after {content:""; opacity: .37; position:absolute;
+ top:0; bottom:0; left:0; right:0; background: #140901; /* Old browsers 
+ background: -moz-linear-gradient(top, #140901 0%, #ffffff 100%); /* FF3.6+ 
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#140901), color-stop(100%,#ffffff)); Chrome,Safari4+ 
+ background: -webkit-linear-gradient(top, #140901 0%,#ffffff 100%); /* Chrome10+,Safari5.1+  background: -o-linear-gradient(top, #140901 0%,#ffffff 100%); /* Opera 11.10+ 
+ background: -ms-linear-gradient(top, #140901 0%,#ffffff 100%); /* IE10+  background: linear-gradient(to bottom, #140901 0%,#ffffff 100%);  W3C filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#140901', endColorstr='#ffffff',GradientType=0 );
+}*/
+/*#rocket #r {width:164px; height:1399px; background:red;}
+*/
+#rocket #r {transform: translateZ(0); 
+    -moz-animation:bgswitch 0.15s linear infinite alternate; -webkit-animation:bgswitch 0.15s linear infinite alternate; animation: bgswitch 0.15s linear infinite alternate; bottom:0; z-index:2; width:164px; height:1399px;
+     -webkit-transform: translate3d(0px, 859px, 0px);  transform: translate3d(0px, 859px, 0px); background-image:url(../images/rocket.png); position:fixed; left:50%; margin-left:-82px;background-size: 100%;}
+#rocket #r:after {content:""; display:none; background-image:url(../images/bg-stars%20.png);}
+
+#rocket #r.off {display:none; -webkit-animation: none; animation:none;}
+
+@keyframes bgswitch {
+    from {background-image:url("img/rocket.svg");}
+    to {background-image:url("img/rocket-alt.svg");}
+}
+
+@-webkit-keyframes bgswitch {
+    from {background-image:url("img/rocket.svg");}
+    to {background-image:url("img/rocket-alt.svg");}
+}
+
+/* Games section */ 
+#games {min-height:500px; background :#fcf8f5; padding:50px; position:relative; z-index:5;   padding-top: 0; position: relative; top: -91px; padding-bottom: 0;}
+#games:after {content:""; height:90px; background :#fcf8f5; width:100%; position:absolute; bottom:-90px; left:0;}
+#games article {margin-top:100px;}
+#games article:first-child {margin-top:0;}
+#games h1 {color:#12a5f4; font-weight: bold; font-size:26px;}
+#games article .description {margin:32px 0; position: relative;}
+#games article .description h1 {margin:0px 0 13px;}
+#games article .description > p {float: left; width: 480px; font-size:20px; color:#6c6c6c; margin:0;}
+#games article .description > ul {float: right; width: 370px; bottom: 0; position: absolute; right: 0;}
+#games article .description > ul li {float:left; margin-right:12px;}
+#games article .description > ul li a img {height:49px;}
+#games article > a > img {margin:8px 0;width: 100%;}
+#games article a {display:inline-block;}
+#games article .video {float:left; cursor:pointer; position:relative; width:475px; height:234px;}
+#games article .video:after {position: absolute; content:""; top:0; right:0; left:0; bottom:0; background-color: rgba(40,19,4,.5); z-index:1;}
+#games article .video > img {width:100%; height:100%;}
+#games article .video > button {z-index:2; font-family: 'Roboto', sans-serif; font-weight:bold; font-size:27px; color: #fff; top:50%; margin-top:-20px; position:absolute; width:100%; text-align:center; border:none; background:none;}
+#games article .video > button span {background-image: url(img/arrow-icon.svg); background-position: left center; background-repeat: no-repeat; padding-left:45px;}
+#games article ul.screenshots {position:relative; /*width:485px; height:234px; float:right;*/}
+#games article ul.screenshots li .phone {background-color:#12a5f4; background-image: url(img/phone-icon.svg); z-index:1; background-size: 60px 74px; border-radius:50%; background-position:center; background-repeat: no-repeat; width:138px; height:138px; position:absolute; top:50%; left:246px; margin-top:-69px; margin-left:-69px;}
+#games article ul.screenshots li {float:left; margin-right: 8px;}
+#games article ul.screenshots li:last-child {margin-right:0px;}
+/*#games article ul.screenshots li img {width:234px; height:234px;}*/
+#games > button.arrow.big {display:block; margin: 91px auto 0;}
+
+/* Satellite */
+#satellite {height:440px; position: relative; top: -54px;}
+#satellite > .s, #satellite > #planet {-webkit-animation: none; animation:none; transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); width:100%; height:2000px; background-repeat:no-repeat; background-position: top center; background-size: 100%;}
+#satellite > .s#s1 {z-index:5; padding-right:50px; left:-20px; position:absolute; top:-10px; background-image: url("../images/top-clouds.svg");}
+#satellite > .s#s1.on {transform: translateZ(0); -webkit-animation:bouncing 5s linear infinite; animation: bouncing 5s linear infinite;}
+#satellite > .s#s2 {z-index:4; padding-right:50px; left:-20px; position:absolute; top:50px; background-image: url("../images/middle-clouds.svg"); }
+#satellite > .s#s2.on {transform: translateZ(0); -webkit-animation:bouncing 6s linear infinite; animation: bouncing 6s linear infinite;}
+#satellite > .s#s3 {z-index:1; padding-right:50px; left:-20px; position:absolute; top:70px; background-image: url("../images/bottom-clouds.svg"); }
+#satellite > .s#s3.on {transform: translateZ(0);-webkit-animation:bouncing 8s linear infinite; animation: bouncing 8s linear infinite;}
+#satellite > #planet {z-index:2; width:960px; height:960px; background-size:100%; position:absolute; top:-410px; left:50%; margin-left:-480px; background-image:url(../images/planet.png);}
+#satellite > #planet.on {transform: translateZ(0); -webkit-animation:turning 120s linear infinite; animation: turning 120s linear infinite;}
+#satellite > #orbit {z-index:2; width:1060px; height:1060px; background-size:100%; position:absolute; top:-460px; left:50%; margin-left:-530px; background-image:url(../images/orbit.png);}
+#satellite > #sat {z-index:2; width:1136px; height:1136px; background-size:80px; background-repeat:no-repeat; background-position:bottom; position:absolute; top:-498px; left:50%; margin-left:-568px; 
+    background-image:url(../images/satellite.png); }
+
+#satellite.inversed {top:0; padding-top:114px;}
+#satellite.inversed > .s, #satellite.inversed > #planet {background-position: bottom center;}
+#satellite.inversed > #planet {top:initial; bottom:-410px; }
+#satellite.inversed > #orbit {top:initial;bottom:-460px; }
+#satellite.inversed > .s#s1 {top:initial; bottom:-10px; background-image: url(img/top-clouds-inversed.svg);}
+#satellite.inversed > .s#s2 {top:initial; position:absolute; bottom:50px; background-image: url(img/middle-clouds-inversed.svg);}
+#satellite.inversed > .s#s3 {top:initial; position:absolute; bottom:70px; background-image: url(img/bottom-clouds-inversed.svg);}
+#satellite.inversed > #sat {background-position:top; position:absolute; bottom:-498px; top:initial; }
+
+@keyframes bouncing {
+    from {transform: rotate(0deg) translate(-5px) rotate(0deg); }
+    to {transform: rotate(360deg) translate(-5px) rotate(-360deg);}
+}
+
+@-webkit-keyframes bouncing {
+    from {transform: rotate(0deg) translate(-5px) rotate(0deg); }
+    to {transform: rotate(360deg) translate(-5px) rotate(-360deg);}
+}
+
+@keyframes turning {
+    from {transform: rotate(360deg); }
+    to {transform: rotate(0deg)}
+}
+
+@-webkit-keyframes turning {
+    from {-webkit-transform: rotate(360deg)}
+    to {-webkit-transform: rotate(0deg)}
+}
+
+@keyframes turning-a {
+    from {transform: rotate(70deg)}
+    to {transform: rotate(290deg)}
+}
+
+@-webkit-keyframes turning-a {
+    from {transform: rotate(70deg)}
+    to {transform: rotate(290deg)}
+}
+
+@keyframes turning-b {
+    from {transform: rotate(110deg)}
+    to {transform: rotate(-110deg)}
+}
+
+@-webkit-keyframes turning-b {
+    from {transform: rotate(110deg)}
+    to {transform: rotate(-110deg)}
+}
+
+@keyframes turning-c {
+    from {transform: rotate(170deg)}
+    to {transform: rotate(-170deg)}
+}
+
+@-webkit-keyframes turning-c {
+    from {transform: rotate(170deg)}
+    to {transform: rotate(-170deg)}
+}
+
+
+@keyframes antiturning {
+    from {transform: rotate(-360deg)}
+    to {transform: rotate(0deg)}
+}
+
+@-webkit-keyframes antiturning {
+    from {transform: rotate(-360deg)}
+    to {transform: rotate(0deg)}
+}
+
+/* Blog */
+#home #blog {padding:190px 0 100px; background:none; min-height:0;}
+#home #blog .in {background:#12a5f4; position:relative; height: 378px; padding:0;}
+#home #blog .in .content > h1 {cursor:pointer; border:3px solid #fff; color:#fff; font-size:30px; padding:13px 30px; margin:9px 0 20px; display: inline-block;}
+#home #blog .in .content > h1:hover
+	{
+	background-color:#fff;
+	color:#12a5f4;
+	}
+#home #blog .in .content > p {margin:15px 0 25px; font-size:20px; color:#fff;}
+#home #blog .in > img {position:absolute; left:0; top:0;}
+#home #blog .in > .content {width:398px; position:absolute; right:0; padding:36px 40px; box-sizing: border-box; bottom:0; top:0;}
+#home #blog .in > .content > button.big.arrow a:after {background-color:#fff; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/arrow-simple-icon-orange.svg");}
+#home #blog .in > .content > button.big.arrow span {width:160px; text-align: center;}
+#home #blog .in > .content > button {margin-top:30px; position:absolute; bottom:36px;}
+
+/* Solar system */
+/*#solar {  background-image: url(img/solar-system.svg); width: 888px; height: 888px;  margin-bottom: -458px; left: 50%; margin-left: -444px; background-size: 100%;}
+#solar > .p {-webkit-animation: none; animation:none; z-index:2; width:973px; height:973px; background-size:85px; background-repeat:no-repeat; background-position:top; position:absolute; top:-42.5px; left:0; margin-left:-42.5px; }
+#solar > .p.on {transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);}
+#solar > #p1 {background-image: url(img/solar-planet-1.svg);}
+#solar > #p1.on {-webkit-animation:turning 110s linear infinite; animation: turning 90s linear infinite;}
+#solar > #p2 {background-size:130px; background-position:73px; background-image: url(img/solar-planet-2.svg); }
+#solar > #p2.on {-webkit-animation:turning-c 90s linear infinite; animation: turning-c 80s linear infinite;}
+#solar > #p3 {background-size:30px; background-position:190px; background-image: url(img/solar-planet-3.svg); }
+#solar > #p3.on {-webkit-animation:turning-c 80s linear infinite; animation: turning-c 110s linear infinite;}
+#solar > #p4 {background-size:49px; background-position:239px; background-image: url(img/solar-planet-4.svg); }
+#solar > #p4.on {-webkit-animation:turning-b 70s linear infinite; animation: turning-b 70s linear infinite;}
+#solar > #p4bis {background-size:43px; background-position:688px; background-image: url(img/solar-planet-4-bis.svg); }
+#solar > #p4bis.on {-webkit-animation:turning 70s linear infinite; animation: turning 70s linear infinite;}
+#solar > #p5 {background-size:64px; background-position:277px; background-image: url(img/solar-planet-5.svg); }
+#solar > #p5.on {-webkit-animation:turning-a 60s linear infinite; animation: turning-a 60s linear infinite;}
+#solar > #p6 {background-size:19px; background-position:342px; background-image: url(img/solar-planet-6.svg); }
+#solar > #p6.on {-webkit-animation:turning 30s linear infinite; animation: turning 30s linear infinite;}
+*/
+
+#solar {background-image: url(../images/solar_system.png); width: 888px; height: 888px;  margin-bottom: -458px; left: 50%; margin-left: -444px; background-size: 100%;}
+
+body.chrome #solar > * {display:none!important; -webkit-animation: none!important; animation:none!important;}
+body.chrome #solar {background-image: url(img/whole-solar-system.svg);}
+
+
+
+body:not(.chrome) #solar > .p {-webkit-animation: none; animation:none; z-index:2; width:973px; height:973px; background-size:85px; background-repeat:no-repeat; background-position:top; position:absolute; top:-42.5px; left:0; margin-left:-42.5px; }
+body:not(.chrome) #solar > .p.on {transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);}
+body:not(.chrome) #solar > #p1 {background-image: url(../images/solar_planet_1.png);}
+body:not(.chrome) #solar > #p1.on {-webkit-animation:turning 110s linear infinite; animation: turning 90s linear infinite;}
+body:not(.chrome) #solar > #p2 {background-size:130px; background-position:73px; background-image: url(../images/solar_planet_2.png); }
+body:not(.chrome) #solar > #p2.on {-webkit-animation:turning 90s linear infinite; animation: turning 80s linear infinite;}
+body:not(.chrome) #solar > #p3 {background-size:30px; background-position:190px; background-image: url(../images/solar_planet_3.png); }
+body:not(.chrome) #solar > #p3.on {-webkit-animation:turning 80s linear infinite; animation: turning 110s linear infinite;}
+body:not(.chrome) #solar > #p4 {background-size:49px; background-position:239px; background-image: url(../images/solar_planet_4.png); }
+body:not(.chrome) #solar > #p4.on {-webkit-animation:turning 70s linear infinite; animation: turning 70s linear infinite;}
+body:not(.chrome) #solar > #p4bis {background-size:43px; background-position:688px; background-image: url(../images/solar_planet_4_bis.png); }
+body:not(.chrome) #solar > #p4bis.on {-webkit-animation:turning 70s linear infinite; animation: turning 70s linear infinite;}
+body:not(.chrome) #solar > #p5 {background-size:64px; background-position:277px; background-image: url(../images/solar_planet_5.png); }
+body:not(.chrome) #solar > #p5.on {-webkit-animation:turning 60s linear infinite; animation: turning 60s linear infinite;}
+body:not(.chrome) #solar > #p6 {background-size:19px; background-position:342px;background-image: url(../images/solar_planet_6.png); }
+body:not(.chrome) #solar > #p6.on {-webkit-animation:turning 30s linear infinite; animation: turning 30s linear infinite;}
+
+
+
+
+/* Hiring part */
+#hiring {font-family: 'Roboto', sans-serif; color:#fff;   padding-bottom: 131px;}
+#hiring .in {background:#12a5f4; color:#fff; margin-bottom:75px;}
+#hiring .in > h1 {color:#fff; width:100%; padding:60px 0; margin:0; text-align:center; font-size: 40px; font-weight: bold; position:relative;}
+#hiring .in > h1:after {content:""; background:#fff; width:183px; height:3px; position:absolute; left:50%; margin-left:-91.5px; bottom:0;}
+#hiring .in > p {margin:45px 0; padding:0 85px; font-size:25px; text-align:center; font-family: 'Roboto', sans-serif;}
+#hiring div.work {background-image: url("img/bg-stars.png"); position:relative;}
+#hiring div.sticker { position:relative;}
+#hiring span.arrow {position:relative; top:8px; margin:0 auto; background: #fff; width:132px; font-size: 25px; color:#12a5f4; font-weight: bold; padding:30px 20px; box-sizing: border-box; display:block; text-align: center;}
+#hiring span.arrow:after {position:absolute; bottom:-67px; left:0; content:""; width: 0; height: 0; border-style: solid; border-width: 67px 66px 0 66px; border-color: #ffffff transparent transparent transparent;}
+#hiring div.sticker:before, #hiring div.sticker:after {background:#12a5f4; content: ""; width: 382px; top: 0; bottom: 0; position: absolute;}
+#hiring div.sticker:before {right:0;}
+#hiring .in div.work > img.cover {margin-top:8px;}
+#hiring > button.big {margin:0 auto; display:block;}
+
+/* Footer */
+footer#footer {color:#fff; font-weight:bold; font-size:20px; position:relative; z-index:10; background:#12a5f4; padding:55px 0 150px; text-align: center;}
+footer#footer #up {height: 125px; width: 125px; background-color: #12a5f4; background-image: url("http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/arrow-sup-icon.svg"); background-repeat: no-repeat; background-size:40px 26px; background-position:center 21px; border-radius: 50%; left: 50%; margin-left: -62.5px; position: absolute; top: -56px; z-index: -1;}
+footer#footer a {color:#ffc697;}
+footer#footer #menu-footer {display:inline-block; text-transform: lowercase;}
+footer#footer #menu-footer li {float:left; padding:0 17px; border-left:2px solid#fff; line-height: 1;}
+footer#footer #menu-footer li:first-child {padding-left:0; border-left:none;}
+footer#footer #menu-footer li:last-child {padding-right:0;}
+footer#footer #menu-footer li.current_page_item a {color:#281304;}
+footer#footer .in > p {margin:15px 0 0px; font-size:14px;}
+footer nav ul.social {display:inline-block; margin-bottom:35px;}
+footer nav ul.social li {margin-left:46px; float:left;}
+footer nav ul.social li {border-radius:50%; margin-left:8px; width:32px; height:32px; overflow: hidden;}
+footer nav ul.social li a {background-size: 32px 32px; width:32px; height:32px; overflow: hidden; padding-left:32px; display:block; }
+footer nav ul.social li a:focus {background-color: #281304;}
+footer nav ul.social li a:hover {background-color: #281304;}
+footer nav ul.social li a.twitter {background-image: url("img/twitter.png");}
+footer nav ul.social li a.facebook {background-image: url("img/facebook.png");}
+
+/*****************/
+/* Projects page */
+
+#satellite.inversed {top:0; padding-top:14px;}
+#satellite.inversed:after {height: 700px; background-image: url(img/top-clouds-inversed.svg),url(img/middle-clouds-inversed.svg),url(img/bottom-clouds-inversed.svg); background-repeat: no-repeat; background-position: center 600px, center 570px, center 560px; background-size: 110%; position: absolute; bottom: 0; width: 100%; content: ""; z-index:2;}
+#satellite.inversed > .s, #satellite.inversed > #planet {background-position: bottom center;}
+#satellite.inversed > #planet {margin-bottom:-100px; top:initial; width: 780px; height: 780px;  position: absolute; left: 50%; margin-left: -390px;}
+#satellite.inversed > #orbit {margin-bottom:-100px; top:initial;bottom:-460px; z-index: 2; width: 880px; height: 880px; position: absolute; left: 50%; margin-left: -440px;}
+#satellite.inversed > .s#s1 {top:initial; bottom:-10px; background-image: url(img/top-clouds-inversed.svg);}
+#satellite.inversed > .s#s2 {top:initial; position:absolute; bottom:50px; background-image: url(img/middle-clouds-inversed.svg);}
+#satellite.inversed > .s#s3 {top:initial; position:absolute; bottom:70px; background-image: url(img/bottom-clouds-inversed.svg);}
+#satellite.inversed > #sat {margin-bottom:-100px; -webkit-animation:antiturning 90s linear infinite; animation: antiturning 90s linear infinite; background-position:top; position:absolute; bottom:-498px; top:initial;  width: 956px; height: 956px; background-size: 70px; margin-left: -478px;}
+
+#projects {min-height:500px; background :#fcf8f5; padding:0px 0 30px;}
+#projects .in div.topbox > h1 {color:#281304; width:100%; padding:7px 0 37px; margin:0; text-align:center; font-size: 70px; font-weight: bold; position:relative;}
+#projects .in div.topbox > h1:after {content:""; background:#12a5f4; width:183px; height:11px; position:absolute; left:50%; margin-left:-91.5px; bottom:0;}
+#projects .in div.topbox > p {margin:37px 0 40px; padding:0 85px; font-size:25px; text-align:center; font-family: 'Roboto', sans-serif;}
+#projects .in div.work {color:#12a5f4; font-weight: bold; font-size:25px; width:100%; text-align:center; margin-bottom:27px;}
+#projects .in div.work span {width:100%; text-align: center; display: block;}
+#projects .in div.work:after {margin-top:10px; content:""; width:40px; height:26px; background-image: url(img/arrow-simple-icon-orange-turned.svg); background-size: 100%; background-repeat: no-repeat; display: inline-block;}
+
+
+#projects div.games {padding-bottom:37px;}
+#projects div.games > article {margin-bottom:20px;}
+#projects div.games > article h1 {color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#projects div.games > article p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:31px;}
+#projects div.games > article img {}
+#projects div.games > article > a {position:relative; display:inline-block; margin-bottom:21px;}
+#projects div.games > article > a:after {background-repeat:no-repeat; background-image: url(img/arrow-simple-icon.svg); background-position:29px center; background-size: 31px 47px; background-color:#12a5f4; content:""; height:85px; width:85px; border-radius:10px; right:20px; position:absolute; bottom:20px;}
+
+#projects div.games {padding-bottom:37px;}
+#projects div.games > article {margin-bottom:37px;}
+#projects div.games > article h1 {color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#projects div.games > article p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:31px;}
+#projects div.games > article img {}
+#projects div.games > article > a {position:relative; display:inline-block; margin-bottom:21px;}
+#projects div.games > article > a:after {background-repeat:no-repeat; background-image: url(img/arrow-simple-icon.svg); background-position:29px center; background-size: 31px 47px; background-color:#12a5f4; content:""; height:85px; width:85px; border-radius:10px; right:20px; position:absolute; bottom:20px;}
+
+/* Game part */
+#game {background :#fcf8f5;}
+#game header {padding-bottom:100px; height:700px; position:relative; overflow:hidden;}
+#game header:after {height:700px; background-image: url(img/top-clouds-inversed.svg),url(img/middle-clouds-inversed.svg),url(img/bottom-clouds-inversed.svg); background-repeat:no-repeat; background-position:center 600px, center 550px, center 530px; background-size:110%; position:absolute; bottom:0; width:100%; content:"";}
+#game header > img.cover {left: 50%; margin-left:-800px; position:absolute; display:block;}
+#game header > img.logo {z-index: 1; position: absolute; display: block; width: 778px; margin-left: -389px; left: 50%; top: 108px;}
+#game p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:20px;}
+#game h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#game h1 span {color:#281304;}
+#game h1 span.alt {color:#b2b2b2;}
+#game h2 {color:#12a5f4; font-weight: bold; font-size:27px; margin: 11px 0;}
+
+#game > article.game > div {margin-bottom:55px;}
+#game > article.game > div.video {margin-bottom:45px; position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;}
+#game {
+    background: #fcf8f5;
+}
+#game > article.game > div.video iframe {position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;}
+#game header::after {
+    height: 700px;
+    background-image: url(http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/top-clouds-inversed.svg),url(http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/middle-clouds-inversed.svg),url(http://www.spaceapegames.com/wp-content/themes/Space%20Ape%20Games/img/bottom-clouds-inversed.svg);
+    background-repeat: no-repeat;
+    background-position: center 600px, center 550px, center 530px;
+    background-size: 110%;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    content: "";
+}
+#game .description {float:left; width:100%;}
+#game .description ul.store {float:left;margin-top:20px;}
+#game .description ul.store li {float:left; margin-right:14px;}
+#game .description ul.store li img {height:46px;}
+#game ul.sociallinks {float:left;}
+#game ul.sociallinks li {margin-bottom:12px; float:left; width:100%;}
+#game ul.sociallinks li > div {float:left; width:360px;}
+#game ul.sociallinks li > img {  margin-top: 12px; float:left; width:37px; margin-right:20px;}
+#game ul.sociallinks li h4 {text-transform: capitalize; font-weight:normal; margin:0; font-size: 20px; color:#484848}
+#game ul.sociallinks li a {  position: relative; top: -5px; color:#12a5f4; font-size: 24px;}
+#game iframe {width:100%; height:540px;}
+#game .project iframe {margin:25px 0;}
+#game .project  {padding-bottom:50px;}
+#game .project ul li {position:relative; padding-left:24px; font-size:20px; color:#6c6c6c; margin:7px 0;}
+#game .project ul li:before {top: 10px; content:""; height:11px; width:11px; border-radius: 50%; background-color: #12a5f4; position:absolute; left:0;}
+#game .project .video {margin-bottom:45px; position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;}
+#game .project .video iframe {position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;}
+
+
+/* About section */
+#about > header {transform:scale(.8); -webkit-transform: scale(.8); margin-top:0px; position:relative; background-image: url(img/solar-system.svg); width: 708px; height: 790px; margin-bottom: -368px; left: 50%; margin-left: -354px; background-size: 100%; z-index: 2;}
+#about header > .p { -webkit-animation: none; animation:none; z-index:2; width:778px; height:778px; background-size:68px; background-repeat:no-repeat; background-position:top; position:absolute; top:-34px; left:0; margin-left:-34px; }
+#about header > .p.on {-webkit-transform: translateZ(0); -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0); transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0);}
+#about header > #p1 {background-image: url(img/solar-planet-1.svg);}
+#about header > #p1.on {-webkit-animation:turning 110s linear infinite; animation: turning 90s linear infinite;}
+#about header > #p2 {background-size:104px; background-position:53px; background-image: url(img/solar-planet-2.svg); }
+#about header > #p2.on {-webkit-animation:turning 90s linear infinite; animation: turning 80s linear infinite;}
+#about header > #p3 {background-size:24px; background-position:150px; background-image: url(img/solar-planet-3.svg); }
+#about header > #p3.on {-webkit-animation:turning 80s linear infinite; animation: turning 110s linear infinite;}
+#about header > #p4 {background-size:39px; background-position:193px; background-image: url(img/solar-planet-4.svg); }
+#about header > #p4.on {-webkit-animation:turning 70s linear infinite; animation: turning 70s linear infinite;}
+#about header > #p4bis {background-size:34px; background-position:551px; background-image: url(img/solar-planet-4-bis.svg); }
+#about header > #p4bis.on {-webkit-animation:turning 70s linear infinite; animation: turning 70s linear infinite;}
+#about header > #p5 {background-size:51px; background-position:220px; background-image: url(img/solar-planet-5.svg); }
+#about header > #p5.on {-webkit-animation:turning 60s linear infinite; animation: turning 60s linear infinite;}
+#about header > #p6 {background-size:15px; background-position:274px; background-image: url(img/solar-planet-6.svg); }
+#about header > #p6.on {-webkit-animation:turning 30s linear infinite; animation: turning 30s linear infinite;}
+
+#about > .about:before {height: 700px; background-image: url(img/top-clouds-inversed.svg),url(img/middle-clouds-inversed.svg),url(img/bottom-clouds-inversed.svg); background-repeat: no-repeat; background-position: center 80px, center 50px, center 40px; background-size: 110%; position: absolute; top: -150px; width: 100%; content: ""; z-index: 2;}
+#about > .about {position:relative; z-index:3; min-height:500px; background :#fcf8f5; padding-bottom:20px;}
+#about > .about div.in {position:relative; z-index:4; margin-bottom:55px;}
+#about > .about  div.in.team {margin-bottom:35px;}
+#about > .about nav {}
+#about > .about nav ul {margin:27px 0 40px; float: left;}
+#about > .about nav ul li {margin-left:8px; border-radius:10px; height:60px; position:relative; width:234px; float: left; background: #231304;}
+#about > .about nav ul li.current_page_item, #about > .about nav ul li:hover {background: #12a5f4;}
+#about > .about nav ul li:first-child {margin-left:0; line-height: 2.2;}
+#about > .about nav ul li a {line-height:2.2; font-weight:bold; width:100%; font-size:27px; color:#fcf8f5; text-align:center; position:absolute; top:0; left:0; right:0; bottom:0;}
+#about > .about nav ul li a:hover {text-decoration: none;}
+#about > .about nav ul li a:focus {border-radius:10px; background-color: #974400; color:#fff!important;}
+#about > .about p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:31px;}
+#about h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#about h1 span {color:#281304;}
+#about h1 span.alt {color:#b2b2b2;}
+#about h2 {color:#12a5f4; font-weight: bold; font-size:27px; margin: 11px 0;}
+#about .awards {margin:38px 0 68px;}
+#about .awards li {float:left; margin-right:50px; min-height: 120px; margin-bottom:22px;}
+#about .awards li a {display:inline-block;}
+#about .board h2 {margin: 28px 0 53px;}
+#about .board {margin-bottom:36px;}
+#about .board.investors {margin-bottom:0px;}
+#about .board.investors ul.board li p {margin:3px 0 13px!important;}
+#about .board nav ul {margin-bottom:30px;}
+#about .press button.big {margin: 58px auto 70px; display: block;}
+#about .board.team h1 {  margin-bottom:21px;}
+
+/* Careers */
+#careers {background :#fcf8f5; padding-bottom:128px;}
+#careers header {/*padding-bottom:100px; */height: 450px; position:relative; overflow:hidden;}
+#careers header:after {height: 700px; background-image: url(img/top-clouds-inversed.svg),url(img/middle-clouds-inversed.svg),url(img/bottom-clouds-inversed.svg); background-repeat: no-repeat; background-position: center 600px, center 570px, center 560px; background-size: 110%; position: absolute; bottom: 0; width: 100%; content: "";}
+#careers header > img {left: 50%; margin-left:-800px; position:absolute; display:block;}
+#careers article > div p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin:13px 0;}
+#careers article > div p span, #careers article > div p strong {color: #12a5f4; font-weight: bold;}
+#careers h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#careers h1.sticker {margin:0 0 50px; padding:20px 0; color:#fff; background:#281304; text-align: center; border-radius:5px;}
+#careers h1.sticker span {color:#12a5f4;}
+#careers h1 span {color:#281304;}
+#careers h1 span.alt {color:#b2b2b2;}
+#careers h2 {color:#12a5f4; font-weight: bold; font-size:27px; margin: 11px 0 21px;}
+#careers h2.alt {color:#281304; margin-top: 110px; margin-bottom:30px;}
+#careers article > div {display:block; margin-bottom:50px; padding-right: 50%; background-image: url(img/careers-planet.svg); background-repeat: no-repeat; background-size:348px; background-position:537px center; }
+#careers article > div.second {padding:0; padding-left: 50%; background-position:85px center;}
+#careers article > div.second {background-image: url(img/careers-planet-alt.svg); background-size:242px;}
+#careers article > div.third {background-image: url(img/careers-planet-alt2.svg); background-size:263px; background-position:595px center;}
+
+
+/* Blog */
+#blog {min-height:500px; background :#fcf8f5; padding:0 0 100px;}
+#blog .in {background:none;}
+#blog h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin: 11px 0;}
+#blog h2 {color:#12a5f4; font-weight: bold; font-size:27px; margin: 11px 0 15px;}
+#blog p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:20px;}
+#blog .colgroup .col img {margin-bottom:20px;}
+
+/* Contact */
+#contact header {height:450px; position:relative; overflow:hidden; background-color: #fcf8f5}
+#contact header:after {height:700px; background-image: url(img/top-clouds-inversed.svg),url(img/middle-clouds-inversed.svg),url(img/bottom-clouds-inversed.svg); background-repeat:no-repeat; background-position: center 600px, center 570px, center 560px; background-size:110%; position:absolute; bottom:0; width:100%; content:"";}
+#contact #map-canvas {position:absolute; top:0; bottom:0; right:0; left:0; width:100%; height:100%;}
+#contact > article {min-height:500px; background :#fcf8f5; padding:10px 0 30px;}
+#contact h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin:0 0 11px;}
+#contact address {font-style: normal; color:#12a5f4; font-weight: bold; font-size:30px; }
+#contact p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:21px;}
+
+/* Conditions */
+#conditions {min-height:500px; background :#fcf8f5; padding:50px 0 80px;}
+#conditions p a {text-decoration: underline;}
+#conditions p {display:block; font-size:20px; color:#6c6c6c; margin:0; margin-bottom:31px;}
+#conditions h1 {margin-top:0; color:#12a5f4; font-weight: bold; font-size:35px; margin:0 0 11px;}
+#conditions h2 {color:#12a5f4; font-weight: bold; font-size:27px; margin: 11px 0;}
+#conditions > header nav {text-align:center;}
+#conditions > header nav ul {margin:30px 0 60px; display: inline-block;}
+#conditions > header nav ul li {margin-left:8px; border-radius:10px; height:60px; position:relative; width:auto; float: left; background: #231304;}
+#conditions > header nav ul li.current_page_item, #conditions > header nav ul li:hover {background: #12a5f4;}
+#conditions > header nav ul li:first-child {margin-left:0; line-height: 2.2;}
+#conditions > header nav ul li a {line-height:2.2; font-weight:bold; width:100%; font-size:27px; color:#fcf8f5; text-align:center; padding:14px 30px; /*position:absolute; top:0; left:0; right:0; bottom:0;*/}
+#conditions > header nav ul li a:focus {border-radius:10px; background-color: #974400}
+#conditions > header nav ul li a:hover {text-decoration: none;}
+
+#post-404 {background-color:black; min-height:500px; padding:50px 0 0;}
+#post-404 h1 {position:relative; z-index:20; margin:50px 0 70px; width: 100%; font-size:300px; text-align: center; color:#12a5f4; font-family: 'DaysOne', sans-serif; font-weight: normal;}
+#post-404 h2 {position:relative; z-index:20; font-family: "Apercu"; margin:  0 0 22px; color:#12a5f4 ; font-size:35px;}
+#post-404 h2 span.mobile {display:none;}
+#post-404 p { position:relative; z-index:20; font-family: "Apercu"; margin: 0 0 0; color:#fff; font-size:20px;}
+#post-404 h1 span {height:200px; width:200px; margin:0 90px; border-radius: 50%; display:inline-block; background-color:transparent;}
+#post-404 .in {width:540px}
+#post-404 button.big {margin:53px 0 120px;}
+body.error404 {position: absolute; margin: 0px; padding: 0px; background: transparent;  width: 100%; height: 100%;}
+body.error404 canvas:not(#stars_canvas) { z-index: 2; position: absolute; left: 0; top: 0; width: 100%; height: 601px; background: transparent; left: 0; top: 0; right:0; margin-left:  0; top: 0;}
+body.error404 #stars_canvas {top:initial;}
+body.error404 footer #up {display:none;}
+
+
+/* Mobile no-parralax */
+body.onmobile #rocket {height:auto!important; background-size: 100%; background-image: url(img/clouds-foreground-phone.svg); background-position: bottom; background-repeat:no-repeat; background-attachment: initial; padding-bottom:100px;}
+body.onmobile #rocket > * {display:none!important;}
+body.onmobile #rocket > p {display:block!important; position:relative; width:100%; margin:60px 0; left: initial; font-size:20px; padding: 0 30px;}
+
+/* Video Wrapper for holiday video */
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 960px) {
+  body {margin-top:0;}
+  #post-404 .in {width:100%; padding:0 20px; box-sizing: border-box;}
+  .in {width:100%; padding:0 20px; box-sizing: border-box;}
+  .in.alt {width:90%; padding:0 20px; box-sizing: border-box;}
+  canvas#stars_canvas {display:none;}
+  h1 {font-size:20px!important;}
+  h2 {font-size:17px!important;}
+  h3 {font-size:15px!important;}
+  h4 {font-size:15px!important;}
+  h5 {font-size:15px!important;}
+  p {font-size:15px!important;}
+  #contact address {font-size:15px}
+
+  #post-404 {min-height:0;}
+  #post-404 h1 {display:none;}
+  body.error404 canvas:not(#stars_canvas) {display:none}
+  #post-404 h2 span.mobile {display:inline-block;}
+  #post-404 button.big {margin:22px 0 100px;}
+
+  button.big {border-radius:5px; width:90%;}
+  button.big a {width:100%; position:relative;}
+  button.big a > span {width: 70%; box-sizing: border-box; padding: 15px; font-size: 15px;}
+  button.big a:after { background-size: 16px 47px; width: 30%!important; box-sizing: border-box; position: absolute; top: 0; bottom: 0; right: 0; height:auto!important; max-width:100px;}
+  button.big.arrow a:after {background-size: 16px 47px;}
+
+  body > header {position:relative; text-align:center;}
+  body > header .in > nav {width:100%; float:none;}
+  body > header #menu-header {width:100%; margin:0; clear:both;}
+  body > header #menu-header li {float:none; width:100%; margin:0;}
+  body > header .in > nav ul.social {float:none; display:inline-block; margin:10px 0 0;}
+  body > header .in > nav ul.social li:first-child {margin:0;}
+  body > header .in > nav > ul > li:hover > ul.sub-menu {display:none; }
+  body > header .in > nav > ul > li.current_page_item > a:after, body > header .in > nav > ul > li.current-page-ancestor > a:after {display:none;}
+
+
+  #rocket {height:auto!important; background-size: 100%; background-image: url(img/clouds-foreground-phone.svg); background-position: bottom; background-repeat:no-repeat; background-attachment: initial; padding-bottom:100px;}
+  #rocket > * {display:none!important;}
+  #rocket > p {display:block!important; position:relative; width:100%; margin:60px 0; left: initial; font-size:20px; padding: 0 30px;}
+
+  #games {padding:50px 0 20px; top: -5px;}
+  #games article .description > p {width:100%; float:none;}
+  #games article .description > ul {margin-top:20px; width:auto; float:none; position:relative;}
+  #games article .description > ul li {margin-top:20px;}
+  #games article .description > ul li a img {}
+  #games article > a > img {width:100%; height:auto!important;}
+  #games article .video {width:100%;}
+  #games article ul.screenshots {width:100%; height:auto!important; margin-top:8px;  float: none; display: inline-block;}
+  #games article ul.screenshots li {width:49%; margin-left:2%;}
+  #games article ul.screenshots li:first-child {margin:0;}
+  #games article ul.screenshots li img, #games article ul.screenshots li a {width:100%; height:auto!important;}
+  #games article ul.screenshots li a.phone {height: 138px!important; left:50%;}
+
+  #satellite {height: 200px; top: -10px;}
+  #satellite #sat, #satellite #orbit, #satellite #planet {display:none;}
+  #satellite > .s, #satellite > #planet {background-size: auto;}
+
+  #home #blog {padding-top:50px;}
+  #home #blog .in  {height:auto; width:90%;}
+  #home #blog .in > img {width:100%; height:auto; position:relative;}
+  #home #blog .in > .content {position:relative; width:100%;}
+  #home #blog .in > .content > button {position:relative; bottom:initial}
+  #home #blog .in > .content > button.big.arrow span {width:70%;}
+
+  #solar .on {animation:none!important; -webkit-animation:none!important;}  
+  #solar > #p2 {transform: rotate(60deg)}
+  #solar > #p3 {transform: rotate(120deg)}
+  #solar > #p4 {transform: rotate(90deg)}
+  #solar > #p5 {transform: rotate(135deg)}
+  #solar > #p6 {transform: rotate(60deg)}
+
+  #hiring .in > h1 {font-size:30px;}
+  #hiring .in > p {width:100%; padding:0; font-size: 20px;}
+  #hiring div.work {background:none;}
+  #hiring div.work {background:none;}
+  #hiring div.work .sticker:before, #hiring div.work .sticker:after {display:none;}
+  #hiring .in div.work > img.cover {width:100%; height: auto; margin-bottom:20px;}
+
+  footer#footer {padding: 40px 0 50px;}
+  footer#footer #menu-footer {margin:0px 0 10px;}
+  footer#footer #menu-footer li { margin-bottom: 4px; font-size: 15px; float:none; padding:0; border:none; }/* Project */
+  
+
+  #satellite.inversed {display:none;}
+  #projects .in div.topbox > h1 {font-size: 50px; padding-top: 30px;}
+  #projects .in div.topbox > p {padding:0; }
+  #projects div.games > article img {width:100%; height:auto;}
+  #projects div.games > article > a:after {background-position: 15px center; background-size: 15px 47px; height: 40px; width: 40px; border-radius: 5px;}
+
+  #game header > img.logo {width: 100%; margin-left: 0; left: 50%; top: initial; width: 450px; margin-left:-225px;}
+  #game header > img.cover {display:none;}
+  #game header {padding-bottom: 0; height: 300px; background-size: cover;}
+  #game header:after {background-image: url(img/top-clouds-inversed.svg); background-repeat: no-repeat; background-position: bottom; background-size: 110%; position: absolute;}
+  #game .description {width:100%;}
+  #game ul.sociallinks {width:90%; padding:0 5%; text-align: center;}
+  #game ul.sociallinks li {width:100%; text-align: center;}
+  #game ul.sociallinks li img {float:none; margin: 10px 0; width: 30px;}
+  #game ul.sociallinks li > div, #game ul.sociallinks li a {width:100%; word-wrap: break-word; font-size:17px;}
+  #game iframe {height:auto;}
+  ul.gallery {text-align:center; width:100%;}
+  ul.gallery li img {width:100%; height:auto; max-width: 400px; float:none;}
+  ul.gallery li {width:auto; height:auto; max-width: 400px; float:none; display: inline-block; margin:4px 2px!important;}
+
+  #about > header, #about > .cloud {display:none;}
+  #about > .about nav ul {width:100%;}
+  #about > .about nav ul li {width: 100%; margin: 3px 0!important; height: 40px; font-size: 15px;}
+  #about > .about nav ul li a {font-size:19px;}
+  #about .awards li {float: none; width: 100%; text-align: center; margin:0; margin-bottom:30px;}
+  #about .awards li img {width: 90%; height: auto; max-width: 250px; }
+
+  ul.board li > div {width:100%;}
+  ul.board li > * {float:none!important; margin:0 0 10px; margin-right:0!important; display: inline-block;}
+  ul.board li {text-align: center;}
+  #about .board.investors ul.board li p, #about ul.board li p {margin-top: 17px!important; text-align: left;}
+
+  ul.team {text-align:center; width:100%;}
+  ul.team li img {width:100%; height:auto; max-width: 150px; float:none;}
+  ul.team li {width:auto; height:auto; max-width: 150px; float:none; display: inline-block; margin:4px 2px!important;}
+
+  ul.board.press li > div {width:100%;}
+
+  #careers header > img.logo {width: 100%; margin-left: 0; left: 50%; top: initial; width: 450px; margin-left:-225px;}
+  #careers header > img {display:none;}
+  #careers header {padding-bottom: 0; height: 300px; background-size: cover; background-position: center;}
+  #careers header:after {background-image: url(img/top-clouds-inversed.svg); background-repeat: no-repeat; background-position: bottom; background-size: 110%; position: absolute;}
+  #careers article > div { width: 100%!important; padding: 0!important; background-image: none!important;}
+
+  #blog h1 {margin-top:40px;}
+
+  #blog .colgroup {text-align:center; width:100%;}
+  #blog .colgroup .col {width:auto; height:auto; max-width: 464px; float:none; display: inline-block; margin:20px;}
+  #blog .colgroup .col img {width:100%; height:auto; max-width: 464px;}
+
+  #contact header {height:300px;}
+  #contact header:after {background-image: url(img/top-clouds-inversed.svg); background-repeat: no-repeat; background-position: bottom; background-size: 110%; position: absolute;}
+  #contact .colgroup .col {width:100%; float:none;}
+  ul.emails  {width: 100%; padding: 0; word-wrap: break-word; text-align: center; margin-top: 60px; margin-bottom: 70px; }
+  ul.emails li:before  {float: none; display: block; margin: 0 auto;}
+  ul.emails li {margin-bottom:10px;}
+  ul.emails li a {margin-bottom:10px; font-size:15px!important;}
+
+  #conditions > header nav ul {width:90%; padding:0 5px;}
+  #conditions > header nav ul li {width: 100%; margin: 3px 0!important; height: 40px; font-size: 15px;}
+  #conditions > header nav ul li a {font-size:19px;}
+  
+
+
+}
+
+@media screen and (max-width: 370px) {
+  button.big {font-size:19px;}
+
+  #games article .description > ul li {width:100%; float:none;   text-align: center;}
+  #games article .description > ul li a img {width:150px; height:auto!important; }
+
+  #game .description ul.store li {width:100%; float:none;   text-align: center; margin-bottom:10px;}
+  #game .description ul.store li img {width:150px; height:auto!important; }
+  #game .description ul.store {width:100%;}
+
+  #blog .in .content > h1 {font-size:20px;}
+
+  
+
+}
+#game header > img.cover{display:none;}
+/* Responsive */
+@media screen and (min-width: 1600px) {
+    #game header, #careers header {background-size: cover;}
+    #careers header img {display:none;}
+    #about > .cloud {top:410px; background-repeat: repeat-x; background-size: 80%; }
+    #game .in, #about .in, #careers .in, #contact .in {padding-top: 40px}
+
+    #satellite.inversed > .s#s1 {bottom:-50px;}
+    #satellite.inversed > .s#s2 {bottom:30px;}
+    #satellite.inversed > .s#s3 {bottom:50px;}
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+
+.first-article p > a:focus, .first-article p span > .first-article a:focus, .first-article a:focus
+	{
+	background-color:#db590d !important;
+	color:#fff !important;
+	text-decoration:none;
+	}
+#games .first-article h1, #game .first-article h1
+	{
+	color:#db590d !important;
+	}
+.second-article p > a:focus, .second-article p span > .second-article a:focus, .second-article a:focus
+	{
+	background-color:#202020 !important;
+	color:#fff !important;
+	text-decoration:none;
+	}
+#games .second-article h1, #game .second-article h1
+	{
+	color:#202020 !important;
+	}
+.third-article p > a:focus, .third-article p span > .third-article a:focus, .third-article a:focus
+	{
+	background-color:#b40500 !important;
+	color:#fff !important;
+	text-decoration:none;
+	}
+#games .third-article h1, #game .third-article h1
+	{
+	color:#b40500 !important;
+	}

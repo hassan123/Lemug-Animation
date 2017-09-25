@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://snapsvg.io/demos/ -->
+<html class="wf-sourcesanspro-i2-active wf-sourcesanspro-i3-active wf-sourcesanspro-i4-active wf-sourcesanspro-i6-active wf-sourcesanspro-i7-active wf-sourcesanspro-i9-active wf-sourcesanspro-n2-active wf-sourcesanspro-n3-active wf-sourcesanspro-n4-active wf-sourcesanspro-n6-active wf-sourcesanspro-n7-active wf-sourcesanspro-n9-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Snap.svg - Snap Demos</title>
+        <link rel="shortcut icon" href="http://snapsvg.io/assets/favicon.ico?v=1">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="./Snap.svg - Snap Demos_files/l" media="all"><script type="text/javascript" async="" src="./Snap.svg - Snap Demos_files/ga.js"></script><script src="./Snap.svg - Snap Demos_files/source-sans-pro-n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9-all.js"></script>
+        <link rel="stylesheet" href="./Snap.svg - Snap Demos_files/master.css">
+        <script src="./Snap.svg - Snap Demos_files/snap.svg-min.js"></script>
+        <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44948757-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    function trackOutboundLink(link, category, action) { 
+        try { 
+        _gaq.push(['_trackEvent', category , action]); 
+        } catch(err){}
+         
+        setTimeout(function() {
+        document.location.href = link.href;
+        }, 100);
+    }
+</script>
+    </head>
+    <body>
+        
+<header id="header">
+    <div class="wrap">
+        <a href="http://snapsvg.io/" class="logo">
+            <img src="./Snap.svg - Snap Demos_files/logo.svg" alt="">
+            <span class="header">Snap.svg</span>
+        </a>
+        <nav>
+            
+            <a href="http://snapsvg.io/" class="">Home</a>
+            
+            <a href="http://snapsvg.io/about/" class="">Why Snap</a>
+            
+            <a href="http://snapsvg.io/start/" class="mobile-hide ">Getting Started</a>
+            
+            <a href="http://snapsvg.io/docs/" class="mobile-hide ">Docs</a>
+            
+            <a href="http://snapsvg.io/support/" class="">Support</a>
+            
+            <a href="http://snapsvg.io/demos/" class="mobile-hide  selected">Demos</a>
+            
+            <a class="bt" href="https://github.com/adobe-webplatform/Snap.svg/archive/v0.4.1.zip" onclick="trackOutboundLink(this, &#39;Download&#39;, &#39;0.4.1&#39;);return false;">Download</a>
+        </nav>
+    </div>
+</header>
+
+        <article>
+            <script src="./Snap.svg - Snap Demos_files/jquery-2.0.3.min.js"></script>
+<section class="demo">
+        <aside>
+            <nav><h3>Snap Demos</h3><a href="http://snapsvg.io/demos/#coffee" class="nav-coffee selected"><img src="./Snap.svg - Snap Demos_files/coffee.jpg" alt="">Coffeemaker</a><a href="http://snapsvg.io/demos/#game" class="nav-game"><img src="./Snap.svg - Snap Demos_files/game.jpg" alt="">Animated game</a><a href="http://snapsvg.io/demos/#globe" class="nav-globe"><img src="./Snap.svg - Snap Demos_files/globe.jpg" alt="">Globe</a><a href="http://snapsvg.io/demos/#mascot" class="nav-mascot"><img src="./Snap.svg - Snap Demos_files/mascot.jpg" alt="">Snap Mascot</a><a href="http://snapsvg.io/demos/#display" class="nav-display"><img src="./Snap.svg - Snap Demos_files/display.jpg" alt="">Display Ad</a>
+                <h3>Websites using Snap</h3>
+                <a class="ext" href="http://pbskids.org/" target="_blank"><img src="./Snap.svg - Snap Demos_files/pbs.jpg" alt=""><span>PBS KIDS</span></a>
+            </nav>
+        </aside>
+        <iframe id="demo-container" src="./Snap.svg - Snap Demos_files/illustrated-infographic-coffee.html" height="800"></iframe>
+</section>
+
+<script>
+    var baseurl = "/assets/demos/",
+    imgbaseurl = "/assets/demos/thumbs/",
+    container = $('#demo-container'),
+    navtemp = '<a href="#UID" class="nav-UID"><img src="IMGSRC" alt=""/>TITLE</a>',
+    navitems = ["<h3>Snap Demos</h3>"];
+
+    var contents = {
+        coffee:{
+            title:'Coffeemaker',
+            path:'illustrated-infographic-coffee',
+            height:860
+        },
+        game:{
+            title:'Animated game',
+            path:'animated-game',
+            height:800
+        },
+        globe:{
+            title:'Globe',
+            path:'animated-map',
+            height: 700
+        },
+        mascot:{
+            title:'Snap Mascot',
+            path:'snap-mascot',
+            height:800
+        },  
+        display:{
+            title:'Display Ad',
+            path:'snap-ad',
+            height:500
+        }
+    };
+
+    for (var key in contents) {
+        var item = contents[key],
+        template = navtemp.replace(/UID/g, key)
+            .replace('IMGSRC', imgbaseurl+key+'.jpg')
+            .replace('TITLE', item.title);
+        navitems.push(template);
+    }
+
+    $('.demo nav').prepend(navitems.join(''));
+
+    selectNavItem('coffee');
+
+    function loadContent( key ) {
+        var item = contents[key];
+        if (!item) return;
+        selectNavItem(key);
+        container.attr({
+            src:baseurl+item.path,
+            height:item.height
+        });
+    };
+
+    function selectNavItem( key ) {
+        $('.demo nav .selected').removeClass('selected');
+        $('.demo nav .nav-' + key).addClass('selected');
+    }
+
+    $(document).ready(function() {
+        if ( window.location.hash ) {
+            loadContent( window.location.hash.replace('#', '') );
+        }
+
+        $('.demo nav a').click(function(e) {
+            loadContent( $(this)[0].hash.replace('#','') );
+        });
+    });
+   
+</script>
+        </article>
+
+        <footer>
+            <div class="wrap">
+                <nav>
+                    <a class="twitter-logo" href="https://twitter.com/Snapsvg"></a>
+                    <a class="github-logo" onclick="trackOutboundLink(this, &#39;GitHub&#39;, &#39;0.4.1&#39;);return false;" href="https://github.com/adobe-webplatform/Snap.svg"></a>
+                    <a class="google-groups-logo" href="https://groups.google.com/forum/#!forum/snapsvg"></a>
+                    <a class="adobe-logo" href="http://html.adobe.com/"></a>
+                </nav>
+            </div>
+        </footer>
+        <img src="./Snap.svg - Snap Demos_files/crocodile.jpg" alt="" style="display:none">
+
+    
+
+<script src="chrome-extension://hhojmcideegachlhfgfdhailpfhgknjm/web_accessible_resources/index.js"></script></body></html>

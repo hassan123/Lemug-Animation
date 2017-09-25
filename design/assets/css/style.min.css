@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+body
+	{
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+	}
+#descriptive-content-that-is-definitely-not-for-search-robots p
+	{
+	margin: 0px;	
+	}
+#descriptive-content-that-is-definitely-not-for-search-robots {
+    z-index: 1;
+    position: absolute;
+    color: #fff;
+    width: 300px;
+    margin: 0px auto;
+    left: 0px;
+    text-align: center;
+    right: 0px;
+    font-size: 20px;
+    top: 35%;
+    text-transform: uppercase;
+}
+.trip { display: none}
+
+.gridtab {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* GridTab */
+
+.gridtab,
+.gridtab>.img{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border: 0 solid;
+    width: 25%;
+   
+}
+.gridtab {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width:100%;
+}
+.gridtab .is-disabled {
+    pointer-events: none
+}
+.gridtab * {
+    box-sizing: border-box
+}
+
+.gridtab>.img {
+    transition: background 1s;
+    background: #f2f2f2;
+     overflow: hidden;
+        height: 293px;
+}
+.gridtab>.img img {
+    max-width: 100%;
+    float: left;
+        position: absolute;
+    -webkit-transition: all 500ms ease;
+-moz-transition: all 500ms ease;
+-ms-transition: all 500ms ease;
+-o-transition: all 500ms ease;
+transition: all 500ms ease;
+    bottom: 0px;
+}
+.caption-text
+    {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: #000; 
+    color: #fff;
+    height: 0px;
+-webkit-transition: all 500ms ease;
+-moz-transition: all 500ms ease;
+-ms-transition: all 500ms ease;
+-o-transition: all 500ms ease;
+transition: all 500ms ease;
+        
+}
+.text-inner
+{
+-webkit-transition: all 800ms ease;
+-moz-transition: all 800ms ease;
+-ms-transition: all 800ms ease;
+-o-transition: all 800ms ease;
+transition: all 800ms ease;
+padding: 30px 0px 31px 0px;
+    
+}
+.caption-text p 
+    {
+        margin: 0px;
+        width: 0px;
+        overflow: hidden;
+        white-space: nowrap;
+}
+.caption-text p span
+    {
+    color: rgb(248, 70, 87);    
+}
+.gridtab>.img:hover .caption-text
+  {
+   height: 80px; 
+}
+.gridtab>.img:hover .text-inner
+  {
+   padding-left: 30px; 
+      
+}
+.gridtab>.img:hover .caption-text p
+    {
+    width: 100%;
+        -webkit-transition: all 800ms ease;
+-moz-transition: all 3s ease;
+-ms-transition: all 3s ease;
+-o-transition: all 3s ease;
+transition: all 3s ease;
+}
+.gridtab>.img:hover img
+    {
+        bottom: 20px;
+}
+.lb-nav a
+{
+    display: block !important;
+}
+ul#filterOptions {
+	height: 52px;
+	margin: 30px 0;
+	overflow: hidden;
+    text-align: center;
+}
+ul#filterOptions li { height: 52px; margin-right: 2px; display: inline-block;}
+ul#filterOptions li a {
+	height: 50px;
+	padding: 0 20px;
+	border: 1px solid #999;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	line-height: 50px;
+	text-decoration: none;
+	display: block;
+}
+ul#filterOptions li a:hover { background: #fff; 
+color: #000;}
+ul#filterOptions li.active a { background: #fff; 
+color: #000;}
+/*- -*/
+/*- OUR DATA HOLDER -*/
+/*#ourHolder { width: 800px; height: 850px; overflow: hidden; }*/
+/*#ourHolder div.item {
+	width: 200px;
+	height: 200px;
+	float: left;
+	text-align: center;
+}*/
+#ourHolder div.item h3 { margin-top: 10px; font-size: 16px; line-height: 20px; }
+.right-link-nave
+    {
+
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+.right-link-nave ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+.right-link-nave ul li
+
+{
+    float: left;
+    list-style-type: none;
+    margin-right: 15px;
+}
+.right-link-nave ul li a
+{
+        color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
